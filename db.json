@@ -8,6 +8,51 @@
       "comment": "this is brang new LG product",
       "date": "2022-11-01T18:30:00.000Z",
       "id": 1
+    },
+    {
+      "productName": "iphone",
+      "category": "Electronics",
+      "freshness": "Brand New",
+      "price": 65000,
+      "comment": "Iphone 13",
+      "date": "2022-11-01T18:30:00.000Z",
+      "id": 2
+    },
+    {
+      "productName": "Mango",
+      "category": "Fruits",
+      "freshness": "Brand New",
+      "price": 10,
+      "comment": "Fresh mango",
+      "date": "2022-11-03T18:30:00.000Z",
+      "id": 3
+    },
+    {
+      "productName": "Apple",
+      "category": "Fruits",
+      "freshness": "Brand New",
+      "price": 60,
+      "comment": "Fresh applesss",
+      "date": "2022-11-01T18:30:00.000Z",
+      "id": 4
+    },
+    {
+      "productName": "iphone12",
+      "category": "Electronics",
+      "freshness": "Second Hand",
+      "price": 40000,
+      "comment": "this is iphone 12",
+      "date": "2022-10-23T18:30:00.000Z",
+      "id": 5
+    },
+    {
+      "productName": "iphone12",
+      "category": "Electronics",
+      "freshness": "Second Hand",
+      "price": 40000,
+      "comment": "this is iphone 12",
+      "date": "2022-10-23T18:30:00.000Z",
+      "id": 6
     }
   ],
   "comments": [

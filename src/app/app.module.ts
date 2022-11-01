@@ -17,6 +17,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatSortModule } from "@angular/material/sort";
+
 
 @NgModule({
   declarations: [AppComponent, DialogComponent],
@@ -36,7 +40,11 @@ import { HttpClientModule } from "@angular/common/http";
     MatRadioModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

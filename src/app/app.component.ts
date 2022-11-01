@@ -1,22 +1,57 @@
-import { Component } from '@angular/core';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { DialogComponent } from './dialog/dialog.component';
-
-
+import { Component, OnInit,ViewChild } from "@angular/core";
+import { MatDialog, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import { DialogComponent } from "./dialog/dialog.component";
+import { ApiService } from "./services/api.service";
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
-export class AppComponent {
-  constructor(private dialog: MatDialog){
+export class AppComponent implements OnInit {
+  displayedColumns: string[] = ['productName', 'category','date','freshness', 'price', 'comment','action'];
+  dataSource!: MatTableDataSource<any>;
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  constructor(private dialog: MatDialog, private api: ApiService) {}
+  ngOnInit(): void {
+    this.getAllProducts()
   }
-  title = 'angular13Crud';
+  title = "angular13Crud";
 
   openDialog() {
     this.dialog.open(DialogComponent, {
-      width:'30%'
+      width: "30%",
     });
+  }
+  editProduct(row:any){
+    this.dialog.open(DialogComponent,{
+      width:'30%',
+      data: row
+    })
+  }
+  getAllProducts() {
+    this.api.getProduct().subscribe({
+      next: (res) => {
+        this.dataSource= new MatTableDataSource(res)
+        this.dataSource.paginator= this.paginator
+        this.dataSource.sort =this.sort
+        console.log("res", res);
+      },
+      error: (err) => {
+        console.log("Error while fetching the records!", err);
+      },
+    });
+  }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 }
