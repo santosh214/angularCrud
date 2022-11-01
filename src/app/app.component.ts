@@ -42,8 +42,16 @@ export class AppComponent implements OnInit {
       }
     })
   }
-  deleteProduct(row:any){
-    // this.api.deleteProduct(row.).subscribe()
+  deleteProduct(id:number){
+    this.api.deleteProduct(id).subscribe({
+      next: (res:any) => {
+        alert('Delete successfully!')
+        this.getAllProducts();
+      },
+      error: (err:any) => {
+        alert("Error while deleting the product!")
+      }
+    })
   }
   getAllProducts() {
     this.api.getProduct().subscribe({
