@@ -1,9 +1,13 @@
 {
-  "posts": [
+  "productList": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "productName": "LG",
+      "category": "Electronics",
+      "freshness": "Brand New",
+      "price": 10000,
+      "comment": "this is brang new LG product",
+      "date": "2022-11-01T18:30:00.000Z",
+      "id": 1
     }
   ],
   "comments": [

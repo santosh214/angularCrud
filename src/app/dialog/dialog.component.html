@@ -3,7 +3,7 @@
  <form [formGroup]="productForm">
     <mat-form-field appearance="outline">
         <mat-label>Product Name</mat-label>
-        <input formControlName="productName" matInput placeholder=" Name" />
+        <input formControlName="productName" type="text" matInput placeholder=" Name" />
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Product Category</mat-label>
@@ -34,7 +34,7 @@
       </mat-radio-group>
       <mat-form-field appearance="outline">
         <mat-label>Price</mat-label>
-        <input formControlName="price" matInput type="number" placeholder=" Name" />
+        <input formControlName="price" matInput type="number" placeholder=" price" />
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Comment</mat-label>

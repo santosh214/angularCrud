@@ -16,6 +16,7 @@ import { MatNativeDateModule } from "@angular/material/core";
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [AppComponent, DialogComponent],
@@ -34,7 +35,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     MatNativeDateModule,
     MatRadioModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
